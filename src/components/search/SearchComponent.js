@@ -21,7 +21,7 @@ function Search(props) {
           onChange={handleChange}
           className="input mx-auto"
         />
-        <Button className="mt-2">Search</Button>
+        <Button className="m-3 bg-primary">Search</Button>
       </Form>
     </Row>
   );
