@@ -20,6 +20,7 @@ function Search(props) {
           name="searchItem"
           onChange={handleChange}
           className="input mx-auto"
+          placeholder="enter search term"
         />
         <Button className="m-3 bg-primary">Search</Button>
       </Form>
