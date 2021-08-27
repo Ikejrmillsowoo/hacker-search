@@ -1,27 +1,29 @@
 import React, { useState } from "react";
-import { Button, Form, Input, Label } from "reactstrap";
+import "./style.css";
+import { Button, Form, Input, Label, Row } from "reactstrap";
 
 function Search(props) {
-  //console.log(props);
   const [searchParam, setSearchParam] = useState("");
 
   const handleChange = (e) => {
     setSearchParam(e.target.value);
+    e.preventDefault();
   };
 
   return (
-    <div>
-      <Form onClick={(e) => props.onClick(e, searchParam)}>
+    <Row>
+      <Form onSubmit={(e) => props.onClick(e, searchParam)}>
         <Label htmlFor="searchItem"></Label>
         <Input
           type="text"
           id="searchItem"
           name="searchItem"
           onChange={handleChange}
+          className="input mx-auto"
         />
         <Button className="mt-2">Search</Button>
       </Form>
-    </div>
+    </Row>
   );
 }
 

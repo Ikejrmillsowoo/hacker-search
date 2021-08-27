@@ -1,0 +1,11 @@
+.history_header {
+    text-decoration: underline;
+}
+li {
+    list-style: none;
+    
+}
+
+.listItem {
+    font-size: 1.5em;
+}

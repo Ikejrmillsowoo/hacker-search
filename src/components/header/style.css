@@ -3,6 +3,8 @@
     background-color: black;
     width: 100%;
     height: auto;
+    padding: 15px 0;
+    border-bottom: solid white 1px;
 }
 h1 {
     font-size: 2em;

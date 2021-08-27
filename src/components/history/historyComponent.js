@@ -1,28 +1,25 @@
-import React, { useState } from "react";
+import React from "react";
+import { Col, Container, Row } from "reactstrap";
+import "./style.css";
 
 function History({ newSearch }) {
-  console.log(newSearch);
-  const [searchItems, setSearchItems] = useState([]);
-  console.log(searchItems);
-
-  const updateItems = () => {
-    setSearchItems([...searchItems, newSearch]);
-  };
-
-  if (!searchItems || searchItems.length < 1) {
-    return <div>No recent searches</div>;
-  } else {
-    updateItems();
-    searchItems.map((item) => {
-      console.log(item);
-      return (
-        <div key={searchItems.indexOf(item)}>
-          <h1>Search history</h1>
-          <p>{item}</p>
-        </div>
-      );
-    });
-  }
+  const items = newSearch.map((item) => {
+    return (
+      <div key={newSearch.indexOf(item)}>
+        <li className="listItem">{item}</li>
+      </div>
+    );
+  });
+  return (
+    <Container>
+      <h2 className="display-3 mt-3 history_header">Search History</h2>
+      <Row className="text-center">
+        <Col>
+          <ol>{items}</ol>
+        </Col>
+      </Row>
+    </Container>
+  );
 }
 
 export default History;
